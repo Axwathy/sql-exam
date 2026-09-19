@@ -26,6 +26,7 @@ JOIN Exam ON Employee.id = Exam.Employee_id
 WHERE Exam.exam_status = 'Pass';
 
 6.
-SELECT Name
+SELECT Employee.Name
 FROM Employee
-WHERE id NOT IN (SELECT Employee_id FROM Exam);
+LEFT JOIN Exam ON Employee.Id = Exam.Employee_id
+WHERE Exam.Employee_id IS NULL;
